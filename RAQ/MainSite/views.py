@@ -1,6 +1,7 @@
-# from manager import Manager
-import pdb
 import sys
+sys.path.append('../../raq/raq/')
+from manager import Manager
+import pdb
 
 from django.shortcuts import render
 
@@ -24,4 +25,5 @@ def Landing(request):
 ##### REST API
 def get_for_word(request):
 	manager = create_or_get_graph(request.session.session_key)
+	print("TEST:", request.GET['word'])
 	return manager.get_graph_json(request.GET['word'])

@@ -69,10 +69,10 @@ var options = {
 	enabled: false
     },
 };
-=======
+
 	// create a network
 	var container = document.getElementById('graph_container');
->>>>>>> 46134e1d03212c0cc4101712b5b5618795891428
+
 
 	// provide the data in the vis format
 	var data = {

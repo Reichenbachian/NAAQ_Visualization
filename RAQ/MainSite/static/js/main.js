@@ -53,6 +53,13 @@ function lerp(a, b, f) {
     return a + f * (b - a);
 }
 
+function everything() {
+    var query = document.getElementById("msg_input").innerHTML
+    var graph_json = _getGraph(query);
+    var g = Graph(graph_json);
+    visualize(g);
+}
+
 // demo
 
 setSentimentIndex(1);

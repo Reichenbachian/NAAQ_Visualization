@@ -1,1 +1,7 @@
-*venv*
+vaderSentiment
+newspaper
+rake_nltk
+pdb
+wolframalpha
+numpy
+unirest

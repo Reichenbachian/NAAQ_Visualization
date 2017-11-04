@@ -16,14 +16,62 @@ var edges = new vis.DataSet([
 ]);
 
 // create a network
-var container = document.getElementById('graph');
+var container = document.getElementById('graph_container');
 
 // provide the data in the vis format
 var data = {
     nodes: nodes,
     edges: edges
 };
-var options = {};
+
+var colors = ["#000004", 
+"#140e36", 
+"#3b0f70",
+"#641a80", 
+"#8c2981", 
+"#b73779", 
+"#de4968", 
+"#f7705c", 
+"#fe9f6d", 
+"#fecf92" 
+];
+
+var options = {
+    nodes: {
+	color: {
+	    border: colors[0],
+            background: colors[0],
+            highlight: {
+		background: colors[2]
+            },
+	    hover: {
+		background: colors[4]
+	    }
+        },
+	font: {
+	    color: colors[9],
+	    size: "14px",
+	    face: "appliedsanswlight"
+	},
+	shadow: {
+	    enabled: true,
+	    color: colors[0],
+	    size:5,
+	    x:5,
+	    y:5
+	},
+	margin: {
+	    top: 30,
+	    bottom: 30,
+	    left: 30,
+	    right: 30
+	},
+	label: "Node",
+	chosen: true,
+	shape: 'box',
+	mass: 3,
+    }
+};
 
 // initialize your network!
 var network = new vis.Network(container, data, options);

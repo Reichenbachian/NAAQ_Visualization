@@ -42,10 +42,12 @@ var options = {
 	    border: colors[0],
             background: colors[0],
             highlight: {
-		background: colors[2]
+		background: colors[1],
+		border: colors[1]
             },
 	    hover: {
-		background: colors[1]
+		background: colors[1],
+		border: colors[1]
 	    }
         },
 	font: {
@@ -66,7 +68,6 @@ var options = {
 	    left: 30,
 	    right: 30
 	},
-	label: "Node",
 	chosen: true,
 	shape: 'box',
 	mass: 3,
@@ -87,8 +88,6 @@ var options = {
 var network = new vis.Network(container, data, options);
 
 network.on("click", function (params) {
-    console.log("Hi!");
-    console.log(params.nodes[0]);
     this.focus(params.nodes[0], {
 	offset: {x:0, y:0},
 	animation: {
@@ -96,4 +95,18 @@ network.on("click", function (params) {
 	    easingFunction: 'easeInOutCubic'
 	}
     });
+});
+
+network.on("click", function (params) {
+    var selectedNodeId = params.nodes[0];
+    nodes.update([{
+	id: selectedNodeId,
+	margin: {
+	    top: 60,
+	    bottom: 60,
+	    left: 60,
+	    right: 60
+	}
+
+    }]);
 });

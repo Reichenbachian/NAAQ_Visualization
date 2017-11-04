@@ -1,6 +1,7 @@
-# from manager import Manager
-import pdb
 import sys
+sys.path.append('../../raq/raq/')
+from manager import Manager
+import pdb
 
 from django.shortcuts import render
 

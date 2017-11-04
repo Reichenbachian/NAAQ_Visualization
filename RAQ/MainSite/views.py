@@ -1,11 +1,9 @@
-# from manager import Manager
-import pdb
 import sys
-
-from django.shortcuts import render
-
 sys.path.append('../../raq/raq/')
-
+from manager import Manager
+import pdb
+from django.http import JsonResponse
+from django.shortcuts import render
 
 sys.path.append('../../raq/raq/')
 
@@ -27,5 +25,9 @@ def Landing(request):
 ##### REST API
 def get_for_word(request):
 	manager = create_or_get_graph(request.session.session_key)
-	print("TEST:", request.GET['word'])
-	return manager.get_graph_json(request.GET['word'])
+	response = manager.get_graph_json(request.GET['word'])
+	edges = []
+	for node in response:
+		for to in node['connected']:
+			edges.append({'from':node['name'], 'to':to})
+	return JsonResponse([edges, response], safe=False)

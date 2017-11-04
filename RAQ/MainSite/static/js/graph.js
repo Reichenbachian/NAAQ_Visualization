@@ -53,7 +53,7 @@ var options = {
 	font: {
 	    color: colors[9],
 	    size: 14,
-	    face: "appliedsanswlight"
+	    face: "AscenderSansMnW01-Regul"
 	},
 	shadow: {
 	    enabled: true,

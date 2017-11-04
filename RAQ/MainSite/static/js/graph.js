@@ -18,9 +18,10 @@ function visualize(g) {// create an array with nodes
 	var nodes = new vis.DataSet(g.nodes);
 
 	// create an array with edges
-	var edges = new vis.DataSet(g.edges);
+    var edges = new vis.DataSet(g.edges);
+    
 
-<<<<<<< HEAD
+
 var options = {
     nodes: {
 	color: {

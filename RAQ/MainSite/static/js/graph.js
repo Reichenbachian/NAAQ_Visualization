@@ -45,7 +45,7 @@ var options = {
 		background: colors[2]
             },
 	    hover: {
-		background: colors[4]
+		background: colors[1]
 	    }
         },
 	font: {
@@ -72,18 +72,28 @@ var options = {
 	mass: 3,
 	
     },
-    interactions: {
-	hover: true
-	
+    interaction: {
+	dragNodes: true,
+	hover: true,
+	hoverConnectedEdges: false,
+	selectConnectedEdges: false,
     },
     manipulation: {
-	enabled: true
-    }
+	enabled: false
+    },
 };
 
 // initialize your network!
 var network = new vis.Network(container, data, options);
 
 network.on("click", function (params) {
-    network.focus(params.nodes[0]);
+    console.log("Hi!");
+    console.log(params.nodes[0]);
+    this.focus(params.nodes[0], {
+	offset: {x:0, y:0},
+	animation: {
+	    duration: 800,
+	    easingFunction: 'easeInOutCubic'
+	}
+    });
 });

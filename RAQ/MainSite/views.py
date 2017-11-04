@@ -1,9 +1,11 @@
-import sys
-sys.path.append('../../raq/raq/')
-from manager import Manager
+# from manager import Manager
 import pdb
+import sys
 
 from django.shortcuts import render
+
+sys.path.append('../../raq/raq/')
+
 
 sys.path.append('../../raq/raq/')
 

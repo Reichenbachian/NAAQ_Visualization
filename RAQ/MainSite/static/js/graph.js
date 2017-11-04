@@ -94,5 +94,5 @@ network.on("click", function (params) {
 	    duration: 800,
 	    easingFunction: 'easeInOutCubic'
 	}
-    });
+    });	
 });

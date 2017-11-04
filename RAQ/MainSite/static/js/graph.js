@@ -16,7 +16,7 @@ var edges = new vis.DataSet([
 ]);
 
 // create a network
-var container = document.getElementById('graph');
+var container = document.getElementById('graph_container');
 
 // provide the data in the vis format
 var data = {

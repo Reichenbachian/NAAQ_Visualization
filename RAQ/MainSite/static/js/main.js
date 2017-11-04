@@ -61,5 +61,10 @@ function everything() {
 }
 
 // demo
-
 setSentimentIndex(1);
+
+addNewHeadline(
+    "Breaking news!!! Privacy advocate got sued for not being private enough!",
+    "https://rmrm.io/",
+    "https://rmrm.io/documents/avatar.png"
+);

@@ -1,3 +1,11 @@
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=f876c5dd-ef30-4c60-85f1-93c7d67fd831");
+@font-face{
+    font-family:"AscenderSansMnW01-Regul";
+    src:url("Fonts/7856be34-cb5a-4a2c-9f60-51991e7fa2b5.eot?#iefix");
+    src:url("Fonts/7856be34-cb5a-4a2c-9f60-51991e7fa2b5.eot?#iefix") format("eot"),url("Fonts/21d061c4-b61f-4c68-9b0b-84b42ecf43dc.woff2") format("woff2"),url("Fonts/430b2a3a-9ba0-432e-bb85-0b2eacdccb9e.woff") format("woff"),url("Fonts/03020aff-2edc-4d21-a065-9b41c26468fc.ttf") format("truetype"),url("Fonts/db475f0c-4290-466f-9821-e28940da4b9c.svg#db475f0c-4290-466f-9821-e28940da4b9c") format("svg");
+}
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -5,7 +13,7 @@
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	font-family: 'Lato', sans-serif;
+	font-family: "AscenderSansMnW01-Regul", sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -38,6 +46,7 @@ table {
 	right: 0;
 	bottom: 0;
 	z-index: 1;
+	pointer-events: none;
 }
 #panel {
 	display: block;

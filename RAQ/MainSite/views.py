@@ -4,6 +4,15 @@ from manager import Manager
 import pdb
 from django.http import JsonResponse
 from django.shortcuts import render
+import pickle
+import os
+import json
+
+cached_response = None
+if os.path.exists('cache.pickle'):
+	cached_response = pickle.loads(open('cache.pickle', 'rb').read())
+else:
+	cached_response = {}
 
 sys.path.append('../../raq/raq/')
 
@@ -24,10 +33,19 @@ def Landing(request):
 
 ##### REST API
 def get_for_word(request):
+
 	manager = create_or_get_graph(request.session.session_key)
-	response = manager.get_graph_json(request.GET['word'])
+	word = request.GET['word']
+	response = ""
+	if word not in cached_response.keys():
+		response = manager.get_graph_json(word)
+		cached_response[word] = response
+		pickle.dump(cached_response, open('cache.pickle', 'wb'), protocol=pickle.HIGHEST_PROTOCOL)
+	else:
+		response = cached_response[word]
 	edges = []
-	for node in response:
+	for node in json.loads(response):
 		for to in node['connected']:
 			edges.append({'from':node['name'], 'to':to})
 	return JsonResponse([edges, response], safe=False)
+

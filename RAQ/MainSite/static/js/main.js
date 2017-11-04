@@ -53,6 +53,50 @@ function lerp(a, b, f) {
     return a + f * (b - a);
 }
 
-// demo
+function addNewHeadline(title, url, imgurl) {
+    if (title.length > 75) {
+        title = title.substring(0, 75);
+    title += "...";
+    }
 
+    var headline = document.createElement('div');
+    headline.className = "headline";
+
+    var salt = Salt();
+    headline.id = salt;
+    headline.onclick = function() {
+        openInNewTab(url);
+    }
+    var img = document.createElement('img');
+    img.src = imgurl;
+    var p = document.createElement('p');
+    p.innerHTML = title;
+
+    headline.appendChild(img);
+    headline.appendChild(p);
+
+    document.getElementById("person_headlines").appendChild(headline);
+}
+
+function openInNewTab(url) {
+    var win = window.open(url, '_blank');
+}
+
+function Salt() {
+    var alphabet = "qwertyuiopasdfghjklzxcvbnm1234567890";
+    var str = "";
+    for (var i = 0; i < 10; i++) {
+        str += alphabet[Math.floor(Math.random() * (35 + 1))];
+    }
+
+    return str;
+}
+
+// demo
 setSentimentIndex(1);
+
+addNewHeadline(
+    "Breaking news!!! Privacy advocate got sued for not being private enough!",
+    "https://rmrm.io/",
+    "https://rmrm.io/documents/avatar.png"
+);

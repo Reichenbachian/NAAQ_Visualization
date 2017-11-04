@@ -56,6 +56,7 @@ table {
 	background-color: #546E7A;
 	overflow-y: auto;
 	z-index: 100499;
+	overflow-x: hidden;
 }
 #person_name {
 	display: block;
@@ -68,6 +69,7 @@ table {
 	color: white;
 	font-size: 40px;
 	background-color: #01579B;
+	overflow: auto;
 }
 #sentiment_index_text {
 	display: block;
@@ -79,6 +81,18 @@ table {
 	line-height: 15px;
 	color: white;
 	font-size: 15px;
+}
+#sentiment_minus_1 {
+	position: absolute;
+	left: 2vw;
+	color: white;
+	margin-top: 27px;
+}
+#sentiment_plus_1 {
+	position: absolute;
+	right: 2vw;
+	color: white;
+	margin-top: 27px;
 }
 #twitter_pic {
 	height: 40px;
@@ -93,9 +107,42 @@ table {
 	height: 70px;
 	width: 100%;
 }
-#person_word_cloud {
-	display: block;
+#person_headlines {
+	display: inline-block;
+    display: -moz-inline-box;
+	max-height: 200px;
+	overflow-x: auto;
+	width: 100%;
+	overflow-y: hidden;
+}
+.headline {
+	display: inline-block;
 	height: 200px;
+	width: 150px;
+	background-color: rgba(255, 255, 255, 0.05);
+	margin-top: 5px;
+	margin-left: 5px;
+}
+.headline:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+	cursor: pointer;
+}
+.headline:active {
+	background-color: rgba(255, 255, 255, 0.2);
+	cursor: pointer;
+}
+.headline img {
+	display: block;
+	width: 80px;
+	margin-left: 35px;
+	margin-top: 15px; 
+	border-radius: 15px;
+}
+.headline p {
+	padding-top: 5px;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
 }
 #person_tweets {
 	display: block;
@@ -144,9 +191,11 @@ table {
 }
 #send_button:hover {
 	background-color: rgba(255, 255, 255, 0.35);
+	cursor: pointer;
 }
 #send_button:active {
 	background-color: rgba(255, 255, 255, 0.20);
+	cursor: pointer;
 }
 #graph_container {
 	display: block;

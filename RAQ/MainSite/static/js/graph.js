@@ -96,17 +96,3 @@ network.on("click", function (params) {
 	}
     });
 });
-
-network.on("click", function (params) {
-    var selectedNodeId = params.nodes[0];
-    nodes.update([{
-	id: selectedNodeId,
-	margin: {
-	    top: 60,
-	    bottom: 60,
-	    left: 60,
-	    right: 60
-	}
-
-    }]);
-});

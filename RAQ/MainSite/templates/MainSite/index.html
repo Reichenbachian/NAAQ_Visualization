@@ -1,57 +1,54 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>RAQ</title>
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
-		<meta name="twitter:widgets:theme" content="dark">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.min.js" type="text/javascript"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js" type="text/javascript"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js" type="text/javascript"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'css/graph.css' %}">
-	</head>
-	<body>
-		<canvas id="bg"></canvas>
-		<div id="panel">
-			<div id="person_name">Miles McCain</div>
-			<div id="person_container">
-				<div id="person_sentiment_index">
-					<div id="sentiment_index_text">SENTIMENT</div>
-					<!--img src="{% static 'img/twitter.png' %}" id="twitter_pic"-->
-					<div id="sentiment_slider_container">
-						<canvas id="sentiment_slider"></canvas>
-					</div>
-				</div>
-				<div id="person_word_cloud"></div>
-				<div id="person_tweets"></div>
-			</div>
-			<div id="search_bar">
-				<input id="msg_input" placeholder="Search...">
-				<div id="send_button"></div>
-			</div>
+    <head>
+	<meta charset="utf-8">
+	<title>RAQ</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> 
+	<meta name="twitter:widgets:theme" content="dark">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/graph.css' %}">
+    </head>
+    <body>
+	<canvas id="bg"></canvas>
+	<div id="panel">
+	    <div id="person_name">Miles McCain</div>
+	    <div id="person_container">
+		<div id="person_sentiment_index">
+		    <div id="sentiment_index_text">SENTIMENT</div>
+		    <!--img src="{% static 'img/twitter.png' %}" id="twitter_pic"-->
+		    <div id="sentiment_slider_container">
+			<canvas id="sentiment_slider"></canvas>
+		    </div>
 		</div>
-<<<<<<< HEAD
-		<div id="search_bar">
-			<input id="msg_input" placeholder="Search...">
-			<div id="send_button"></div>
-		</div>
+		<div id="person_word_cloud"></div>
+		<div id="person_tweets"></div>
+	    </div>
+	    <div id="search_bar">
+		<input id="msg_input" placeholder="Search...">
+		<div id="send_button"></div>
+	    </div>
+	</div>
+	<div id="search_bar">
+	    <input id="msg_input" placeholder="Search...">
+	    <div id="send_button"></div>
+	</div>
 	</div>
 	<div id="graph_container"></div>
-<script src="{% static 'js/main.js' %}" type="text/javascript"></script>
-<script src="{% static 'js/graph.js' %}" type="text/javascript"></script>
-<script src="{% static 'js/bg.js' %}" type="text/javascript"></script>
-</body>
-=======
-		<div id="graph_container"></div>
-		<div id="graph"></div>
 	<script src="{% static 'js/main.js' %}" type="text/javascript"></script>
 	<script src="{% static 'js/graph.js' %}" type="text/javascript"></script>
 	<script src="{% static 'js/bg.js' %}" type="text/javascript"></script>
-	</body>
->>>>>>> origin/master
+    </body>
+    <div id="graph_container"></div>
+    <div id="graph"></div>
+    <script src="{% static 'js/main.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/graph.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/bg.js' %}" type="text/javascript"></script>
+    </body>
 </html>

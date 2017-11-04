@@ -50,7 +50,7 @@ var options = {
         },
 	font: {
 	    color: colors[9],
-	    size: "14px",
+	    size: 14,
 	    face: "appliedsanswlight"
 	},
 	shadow: {

@@ -70,6 +70,7 @@ var options = {
 	chosen: true,
 	shape: 'box',
 	mass: 3,
+	
     }
 };
 

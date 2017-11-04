@@ -71,8 +71,19 @@ var options = {
 	shape: 'box',
 	mass: 3,
 	
+    },
+    interactions: {
+	hover: true
+	
+    },
+    manipulation: {
+	enabled: true
     }
 };
 
 // initialize your network!
 var network = new vis.Network(container, data, options);
+
+network.on("click", function (params) {
+    network.focus(params.nodes[0]);
+});

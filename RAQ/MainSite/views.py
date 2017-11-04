@@ -1,5 +1,5 @@
 import sys
-sys.path.append('../../raq/raq/')
+sys.path.append("../../raq/raq/")
 from manager import Manager
 import pdb
 from django.http import JsonResponse
@@ -44,8 +44,11 @@ def get_for_word(request):
 	else:
 		response = cached_response[word]
 	edges = []
+	nodes = []
 	for node in json.loads(response):
-		for to in node['connected']:
+		for to in node['elements']['RelatedTopics']:
 			edges.append({'from':node['name'], 'to':to})
-	return JsonResponse([edges, response], safe=False)
+			nodes.append(node['name'])
+			nodes.append(to)
+	return JsonResponse([list(set(nodes)), edges, response], safe=False)
 

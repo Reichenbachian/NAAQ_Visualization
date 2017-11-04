@@ -1,13 +1,13 @@
 class Graph{
 	constructor(json) {
 		this.nodes = []
-		for (var i = 0; i < json.length; i++) {
-			this.nodes.push({id:json[i]['name'], label:json[i]['name']})
+		for (var i = 0; i < json[0].length; i++) {
+			this.nodes.push({id:json[0][i], label:json[0][i]})
 		}
 		this.edges = []
-		for (var i = 0; i < json.length; i++) {
-			for (var j = 0; j < json[i]["RelatedTopics"].length; j++)
-			this.nodes.push({from:json[i]['name'], label:json[i]["RelatedTopics"][j]})
+		for (var i = 0; i < json[1].length; i++) {
+			console.log(json[1][i])
+			this.edges.push({'from':json[1][i]['from'], 'to':json[1][i]['to']})
 		}
 	}
 }
@@ -15,12 +15,25 @@ class Graph{
 
 
 function visualize(g) {// create an array with nodes
+	g = new Graph(g);
+	console.log("asdf", g.edges);
 	var nodes = new vis.DataSet(g.nodes);
 
 	// create an array with edges
     var edges = new vis.DataSet(g.edges);
     
 
+	var colors = ["#000004", 
+	"#140e36", 
+	"#3b0f70",
+	"#641a80", 
+	"#8c2981", 
+	"#b73779", 
+	"#de4968", 
+	"#f7705c", 
+	"#fe9f6d", 
+	"#fecf92" 
+	];
 
 var options = {
     nodes: {
@@ -79,18 +92,6 @@ var options = {
 	    nodes: nodes,
 	    edges: edges
 	};
-
-	var colors = ["#000004", 
-	"#140e36", 
-	"#3b0f70",
-	"#641a80", 
-	"#8c2981", 
-	"#b73779", 
-	"#de4968", 
-	"#f7705c", 
-	"#fe9f6d", 
-	"#fecf92" 
-	];
 
 	var options = {
 	    nodes: {
@@ -157,3 +158,13 @@ var options = {
 	    // change topic word cloud
 	});
 }
+
+$.ajax({
+	url: window.location.href+'api?word=obama',
+	global: false,
+	type: 'GET',
+	data: {},
+	async: true, //blocks window close
+	success: function(x){visualize(x)}
+	}
+);

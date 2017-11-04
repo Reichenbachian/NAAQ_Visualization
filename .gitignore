@@ -1,0 +1,5 @@
+*venv*
+RAQ/MainSite/__pycache__/
+RAQ/MainSite/migrations/__pycache__/
+RAQ/MainSite/static/img/
+RAQ/RAQ/__pycache__/

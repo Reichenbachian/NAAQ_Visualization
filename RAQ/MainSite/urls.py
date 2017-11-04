@@ -5,4 +5,5 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^$', views.Landing),
+    url(r'^api/$', views.get_for_word),
 ]

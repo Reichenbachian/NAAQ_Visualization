@@ -22,4 +22,4 @@ def Landing(request):
 ##### REST API
 def get_for_word(request):
 	manager = create_or_get_graph(request.session.session_key)
-	return maanger.get_graph_json(request.GET['word'])
+	return manager.get_graph_json(request.GET['word'])

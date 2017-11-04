@@ -46,18 +46,20 @@ table {
 	width: 25%;
 	background-color: rgba(0, 0, 0, 0.5);
 	position: relative;
+	overflow: hidden;
 }
 #person_container {
 	position: relative;
 	display: block;
-	height: 100%;
+	height: calc(100% - 50px - 80px);
 	width: 100%;
 	background-color: #546E7A;
+	overflow-y: auto;
+	z-index: 100499;
 }
 #person_name {
-	position: absolute;
+	display: block;
 	top: 0px;
-	display: 0;
 	width: 100%;
 	height: 80px;
 	text-align: center;
@@ -66,6 +68,38 @@ table {
 	color: white;
 	font-size: 40px;
 	background-color: #01579B;
+}
+#sentiment_index_text {
+	display: block;
+	padding-top: 15px;
+	width: 100%;
+	height: 15px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 15px;
+	color: white;
+	font-size: 15px;
+}
+#twitter_pic {
+	height: 40px;
+	display: inline-block;
+	padding-bottom: 20px;
+}
+#person_sentiment_index {
+	display: block;
+	height: 100px;
+}
+#sentiment_slider {
+	height: 70px;
+	width: 100%;
+}
+#person_word_cloud {
+	display: block;
+	height: 200px;
+}
+#person_tweets {
+	display: block;
+	height: 300px;
 }
 #search_bar {
 	position: absolute;
